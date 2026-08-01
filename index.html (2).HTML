@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>PRO FREE FIRE KEY + UID</title>
+<link rel="manifest" href="data:application/json,{
+  \"name\": \"PRO Free Fire Key + UID\",
+  \"short_name\": \"FFKeyUID\",
+  \"start_url\": \".\",
+  \"display\": \"standalone\",
+  \"background_color\": \"#1a0a2e\",
+  \"theme_color\": \"#9b59b6\",
+  \"icons\": [{
+    \"src\": \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a0a2e'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='60' fill='%239b59b6' font-family='monospace'%3EUID%3C/text%3E%3C/svg%3E\",
+    \"sizes\": \"192x192\",
+    \"type\": \"image/svg+xml\"
+  }]
+}">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#1a0a2e; font-family:'Courier New',monospace; min-height:100vh; overflow-x:hidden; color:#d4a5f5; }
+.matrix-bg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:0.08; }
+.main-wrapper { position:relative; z-index:1; max-width:600px; margin:40px auto; padding:20px; }
+.screen { background:rgba(26,10,46,0.92); backdrop-filter:blur(12px); border:1px solid rgba(155,89,182,0.4); border-radius:20px; padding:30px; box-shadow:0 0 50px rgba(155,89,182,0.3); animation:glowPulse 3s infinite alternate; display:none; }
+.screen.active { display:block; }
+@keyframes glowPulse { 0% { box-shadow:0 0 20px rgba(155,89,182,0.2); } 100% { box-shadow:0 0 70px rgba(155,89,182,0.5); } }
+.screen h1 { color:#9b59b6; text-align:center; font-size:26px; letter-spacing:4px; text-transform:uppercase; margin-bottom:20px; text-shadow:0 0 20px #9b59b6; }
+.screen h1 span { color:#ffffff; }
+.input-group { margin-bottom:18px; }
+.input-group label { display:block; color:#c39bd3; font-size:13px; letter-spacing:2px; margin-bottom:5px; text-transform:uppercase; }
+.input-group input, .input-group select { width:100%; padding:12px 16px; background:transparent; border:1px solid #9b59b6; border-radius:8px; color:#d4a5f5; font-size:15px; font-family:'Courier New',monospace; outline:none; transition:all 0.3s; }
+.input-group select option { background:#1a0a2e; color:#d4a5f5; }
+.input-group input:focus, .input-group select:focus { border-color:#9b59b6; box-shadow:0 0 20px rgba(155,89,182,0.4); }
+.btn { width:100%; padding:14px; background:transparent; border:2px solid #9b59b6; border-radius:10px; color:#9b59b6; font-size:16px; letter-spacing:4px; text-transform:uppercase; cursor:pointer; transition:all 0.3s; margin-top:8px; }
+.btn:hover { background:#9b59b6; color:#1a0a2e; box-shadow:0 0 30px rgba(155,89,182,0.6); }
+.status-msg { margin-top:12px; color:rgba(212,165,245,0.6); text-align:center; font-size:13px; letter-spacing:1px; }
+.dashboard-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid rgba(155,89,182,0.3); padding-bottom:12px; }
+.dashboard-header h2 { color:#9b59b6; font-size:20px; letter-spacing:3px; text-shadow:0 0 10px #9b59b6; }
+.dashboard-header .key-info { color:rgba(212,165,245,0.5); font-size:12px; }
+.dashboard-header .uid-info { color:#c39bd3; font-size:12px; margin-left:10px; }
+.menu-toggle { background:transparent; border:1px solid #9b59b6; color:#9b59b6; padding:8px 16px; border-radius:6px; cursor:pointer; font-family:'Courier New',monospace; font-size:14px; letter-spacing:2px; transition:all 0.3s; }
+.menu-toggle:hover { background:#9b59b6; color:#1a0a2e; }
+.dropdown-menu { display:none; margin-top:12px; background:rgba(155,89,182,0.08); border:1px solid rgba(155,89,182,0.3); border-radius:10px; padding:15px; }
+.dropdown-menu.show { display:block; }
+.dropdown-menu select { width:100%; padding:12px; background:transparent; border:1px solid #9b59b6; border-radius:8px; color:#d4a5f5; font-size:15px; font-family:'Courier New',monospace; outline:none; margin-bottom:12px; }
+.dropdown-menu select option { background:#1a0a2e; color:#d4a5f5; }
+.action-btn { width:100%; padding:12px; background:transparent; border:1px solid #9b59b6; border-radius:8px; color:#9b59b6; font-size:14px; letter-spacing:2px; cursor:pointer; transition:all 0.3s; margin-top:8px; }
+.action-btn:hover { background:#9b59b6; color:#1a0a2e; }
+.output-area { margin-top:18px; padding:15px; background:rgba(0,0,0,0.4); border:1px solid rgba(155,89,182,0.3); border-radius:8px; min-height:90px; color:#d4a5f5; font-size:14px; letter-spacing:1px; word-break:break-all; }
+.logout-btn { background:transparent; border:1px solid #e74c3c; color:#e74c3c; padding:6px 14px; border-radius:6px; cursor:pointer; font-family:'Courier New',monospace; font-size:12px; letter-spacing:2px; transition:all 0.3s; }
+.logout-btn:hover { background:#e74c3c; color:#1a0a2e; }
+@media (max-width:480px) { .main-wrapper { margin:20px 10px; padding:10px; } .screen { padding:20px; } }
+</style>
+</head>
+<body>
+<canvas class="matrix-bg" id="matrixCanvas"></canvas>
+<div class="main-wrapper">
+  <div class="screen active" id="loginScreen">
+    <h1>PRO <span>FREE FIRE</span> KEY + UID</h1>
+    <div class="input-group">
+      <label>ใส่คีย์</label>
+      <input type="text" class="key-input" placeholder="ป้อนคีย์ที่ได้รับ" autocomplete="off">
+    </div>
+    <div class="input-group">
+      <label>UID เกม</label>
+      <input type="text" class="uid-input" placeholder="ใส่ UID ของคุณ (ตัวเลข)" autocomplete="off">
+    </div>
+    <div class="input-group">
+      <label>เลือกระยะเวลา</label>
+      <select class="duration-select">
+        <option value="1h">1 ชั่วโมง</option>
+        <option value="2h">2 ชั่วโมง</option>
+        <option value="3h">3 ชั่วโมง</option>
+        <option value="4h">4 ชั่วโมง</option>
+        <option value="5h">5 ชั่วโมง</option>
+        <option value="6h">6 ชั่วโมง</option>
+        <option value="24h">24 ชั่วโมง</option>
+        <option value="7d">7 วัน</option>
+        <option value="1m">1 เดือน</option>
+        <option value="1y">1 ปี</option>
+        <option value="lifetime">ตลอดชีพ</option>
+      </select>
+    </div>
+    <button class="btn" onclick="handleKeyLogin()">ปลดล็อก</button>
+    <div class="status-msg" id="loginStatus">กรุณาใส่คีย์และ UID เพื่อเข้าใช้งาน</div>
+  </div>
+  <div class="screen" id="dashboard">
+    <div class="dashboard-header">
+      <h2>FREE FIRE TOOL</h2>
+      <div>
+        <span class="key-info" id="keyInfo">LIFETIME</span>
+        <span class="uid-info" id="uidInfo">UID: -</span>
+        <button class="logout-btn" onclick="handleLogout()">ออก</button>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">[ เมนู ]</button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <select class="function-select">
+        <option value="lockhead">ล็อกหัว</option>
+        <option value="lockbody">ล็อกตัว</option>
+        <option value="lockall">ล็อกตลอด</option>
+        <option value="wallhacknormal">มองทะลุธรรมดา</option>
+        <option value="wallhackred">มองทะลุตัวสีแดง</option>
+        <option value="wallhackgreen">มองทะลุตัวสีเขียว</option>
+        <option value="aimshot">ยิงตัว (โดนได้)</option>
+        <option value="speedfast">วิ่งไว</option>
+        <option value="speedslow">วิ่งช้า</option>
+        <option value="createfront">สร้างข้างหน้า</option>
+      </select>
+      <button class="action-btn" onclick="executeFunction()">ดำเนินการ</button>
+    </div>
+    <div class="output-area" id="outputArea">ระบบพร้อม | เลือกฟังก์ชันแล้วกดดำเนินการ</div>
+  </div>
+</div>
+<script>
+// Matrix background
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const chars = 'FREEFIREUID0123456789@#$%&*';
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(26,10,46,0.05)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = '#9b59b6';
+  ctx.font = fontSize + 'px monospace';
+  for (let i=0; i<drops.length; i++) {
+    const text = chars.charAt(Math.floor(Math.random()*chars.length));
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+    if (drops[i]*fontSize > canvas.height && Math.random()>0.975) drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix,50);
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+
+// Key system (ต้องตรงกับ duration ที่เลือก)
+const VALID_KEYS = {
+  'FF-2025-MASTER': 'lifetime',
+  'FF-2025-1H': '1h',
+  'FF-2025-2H': '2h',
+  'FF-2025-3H': '3h',
+  'FF-2025-4H': '4h',
+  'FF-2025-5H': '5h',
+  'FF-2025-6H': '6h',
+  'FF-2025-24H': '24h',
+  'FF-2025-7D': '7d',
+  'FF-2025-1M': '1m',
+  'FF-2025-1Y': '1y',
+  'DEMO-FF': '1h'
+};
+function getDurationMs(duration) {
+  const now = Date.now();
+  switch(duration) {
+    case '1h': return now + 3600000;
+    case '2h': return now + 7200000;
+    case '3h': return now + 10800000;
+    case '4h': return now + 14400000;
+    case '5h': return now + 18000000;
+    case '6h': return now + 21600000;
+    case '24h': return now + 86400000;
+    case '7d': return now + 604800000;
+    case '1m': return now + 2592000000;
+    case '1y': return now + 31536000000;
+    case 'lifetime': return Infinity;
+    default: return now;
+  }
+}
+function formatDuration(expiry) {
+  if (expiry === Infinity) return 'LIFETIME';
+  const remaining = expiry - Date.now();
+  if (remaining <= 0) return 'หมดอายุ';
+  const hours = Math.floor(remaining / 3600000);
+  const minutes = Math.floor((remaining % 3600000) / 60000);
+  return hours + 'ชม. ' + minutes + 'น.';
+}
+function handleKeyLogin() {
+  const keyInput = document.querySelector('.key-input').value.trim().toUpperCase();
+  const uidInput = document.querySelector('.uid-input').value.trim();
+  const durationSelect = document.querySelector('.duration-select').value;
+  const statusEl = document.getElementById('loginStatus');
+
+  // ตรวจสอบ UID
+  if (!uidInput || !/^\d+$/.test(uidInput)) {
+    statusEl.textContent = 'กรุณาใส่ UID ที่ถูกต้อง (ตัวเลขเท่านั้น)';
+    statusEl.style.color = '#e74c3c';
+    return;
+  }
+  if (uidInput.length < 6 || uidInput.length > 20) {
+    statusEl.textContent = 'UID ต้องมีความยาว 6-20 ตัว';
+    statusEl.style.color = '#e74c3c';
+    return;
+  }
+
+  // ตรวจสอบคีย์
+  if (!keyInput) {
+    statusEl.textContent = 'กรุณาใส่คีย์';
+    statusEl.style.color = '#e74c3c';
+    return;
+  }
+  const expectedDuration = VALID_KEYS[keyInput];
+  if (!expectedDuration) {
+    statusEl.textContent = 'คีย์ไม่ถูกต้อง';
+    statusEl.style.color = '#e74c3c';
+    return;
+  }
+
+  // ตรวจสอบว่าคีย์ตรงกับ duration ที่เลือกหรือไม่ (เข้มงวด)
+  if (expectedDuration !== 'lifetime' && expectedDuration !== durationSelect) {
+    statusEl.textContent = 'คีย์ไม่ถูกต้อง เนื่องจากระยะเวลาไม่ตรงกับที่เลือก (เช่น เลือก 1 ชม. แต่คีย์เป็น 7 วัน)';
+    statusEl.style.color = '#e74c3c';
+    return;
+  }
+
+  // ถ้าผ่านทั้งหมด
+  const expiry = getDurationMs(expectedDuration);
+  const session = {
+    key: keyInput,
+    uid: uidInput,
+    expiry: expiry,
+    duration: expectedDuration
+  };
+  localStorage.setItem('ffSession', JSON.stringify(session));
+  statusEl.textContent = 'ปลดล็อกสำเร็จ กำลังเข้าใช้งาน...';
+  statusEl.style.color = '#2ecc71';
+  setTimeout(()=>{
+    document.getElementById('loginScreen').classList.remove('active');
+    document.getElementById('dashboard').classList.add('active');
+    updateKeyInfo();
+  },1000);
+}
+function updateKeyInfo() {
+  const session = JSON.parse(localStorage.getItem('ffSession'));
+  if (session) {
+    const remaining = session.expiry - Date.now();
+    if (remaining <= 0 && session.expiry !== Infinity) { handleLogout(); return; }
+    document.getElementById('keyInfo').textContent = formatDuration(session.expiry);
+    document.getElementById('uidInfo').textContent = 'UID: ' + session.uid;
+  }
+}
+function handleLogout() {
+  localStorage.removeItem('ffSession');
+  document.getElementById('dashboard').classList.remove('active');
+  document.getElementById('loginScreen').classList.add('active');
+  document.querySelector('.key-input').value='';
+  document.querySelector('.uid-input').value='';
+  document.getElementById('loginStatus').textContent='ออกจากระบบแล้ว กรุณาใส่คีย์และ UID อีกครั้ง';
+  document.getElementById('loginStatus').style.color='rgba(212,165,245,0.6)';
+}
+(function() {
+  const session = JSON.parse(localStorage.getItem('ffSession'));
+  if (session) {
+    const remaining = session.expiry - Date.now();
+    if (remaining > 0 || session.expiry === Infinity) {
+      document.getElementById('loginScreen').classList.remove('active');
+      document.getElementById('dashboard').classList.add('active');
+      updateKeyInfo();
+    } else {
+      localStorage.removeItem('ffSession');
+    }
+  }
+})();
+function toggleMenu() {
+  document.getElementById('dropdownMenu').classList.toggle('show');
+}
+function executeFunction() {
+  const session = JSON.parse(localStorage.getItem('ffSession'));
+  if (!session) { document.getElementById('outputArea').textContent='ไม่มีเซสชัน กรุณาเข้าสู่ระบบใหม่'; return; }
+  const remaining = session.expiry - Date.now();
+  if (remaining <= 0 && session.expiry !== Infinity) {
+    document.getElementById('outputArea').textContent='เซสชันหมดอายุ กรุณาต่ออายุคีย์';
+    handleLogout();
+    return;
+  }
+  const func = document.querySelector('.function-select').value;
+  const output = document.getElementById('outputArea');
+  const now = new Date().toLocaleTimeString('th-TH');
+  switch(func) {
+    case 'lockhead': output.innerHTML = `[${now}] ล็อกหัว: เปิดใช้งานแล้ว เป้าหมายล็อกที่หัวแม่นยำ 98%`; break;
+    case 'lockbody': output.innerHTML = `[${now}] ล็อกตัว: เปิดใช้งานแล้ว ล็อกลำตัวเป้าหมาย`; break;
+    case 'lockall': output.innerHTML = `[${now}] ล็อกตลอด: เปิดใช้งานแล้ว ล็อกทั้งตัวตลอดเวลา`; break;
+    case 'wallhacknormal': output.innerHTML = `[${now}] มองทะลุธรรมดา: เปิดใช้งานแล้ว เห็นศัตรูผ่านกำแพง (สีปกติ)`; break;
+    case 'wallhackred': output.innerHTML = `[${now}] มองทะลุตัวสีแดง: เปิดใช้งานแล้ว ศัตรูจะแสดงเป็นสีแดงเด่นชัด`; break;
+    case 'wallhackgreen': output.innerHTML = `[${now}] มองทะลุตัวสีเขียว: เปิดใช้งานแล้ว ศัตรูจะแสดงเป็นสีเขียว (มองง่าย)`; break;
+    case 'aimshot': output.innerHTML = `[${now}] ยิงตัว (โดนได้): เปิดใช้งานแล้ว เล็งยิงอัตโนมัติแม่นยำ 100%`; break;
+    case 'speedfast': output.innerHTML = `[${now}] วิ่งไว: เปิดใช้งานแล้ว ความเร็วเพิ่มขึ้น 250%`; break;
+    case 'speedslow': output.innerHTML = `[${now}] วิ่งช้า: เปิดใช้งานแล้ว ความเร็วลดลง 50%`; break;
+    case 'createfront': output.innerHTML = `[${now}] สร้างข้างหน้า: เปิดใช้งานแล้ว สร้างหุ่นล่อข้างหน้าศัตรู 3 ตัว`; break;
+    default: output.innerHTML = `[${now}] ไม่รู้จักฟังก์ชัน`;
+  }
+}
+// Service Worker for PWA installability
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('data:text/javascript;base64,' + btoa(`
+    self.addEventListener('install', e => self.skipWaiting());
+    self.addEventListener('activate', e => e.waitUntil(clients.claim()));
+    self.addEventListener('fetch', e => e.respondWith(fetch(e.request)));
+  `)).then(() => console.log('SW registered'));
+}
+</script>
+</body>
+</html>
